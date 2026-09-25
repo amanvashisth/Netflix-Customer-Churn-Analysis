@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
+import pickle
+import os
 
 
 # ============================================================
@@ -21,17 +22,22 @@ st.set_page_config(
 
 @st.cache_resource
 def load_model():
-    model = joblib.load("Notebooks/XGBoost_model.pkl")
+
+    model_path = "Models/XGBoost_model.pkl"
+
+    st.write("Model exists:", os.path.exists(model_path))
+
+    with open(model_path, "rb") as file:
+        model = pickle.load(file)
+
     return model
 
 
 try:
     model = load_model()
+
 except Exception as e:
-    st.error(
-        "Unable to load the churn prediction model. "
-        "Please make sure 'models/churn_model.pkl' exists."
-    )
+    st.error(f"Model loading error: {e}")
     st.stop()
 
 
