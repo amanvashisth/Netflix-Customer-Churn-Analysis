@@ -1,12 +1,8 @@
 # Netflix Customer Churn Prediction
 
-> A machine-learning application for identifying Netflix customers who may be at risk of churn and supporting data-informed retention decisions.
-
 ## Deployment
 
-**Live application:** **[Add Streamlit deployment URL here]**
-
-> Replace the placeholder above with the deployed application URL so an HR reviewer or hiring manager can open and test the project directly.
+**Live application:** https://netflix-customer-churn-analysi-p7kzvjsykmvwtzmyk7yzjf.streamlit.app/
 
 ## Project Overview
 
